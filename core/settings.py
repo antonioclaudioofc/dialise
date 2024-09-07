@@ -74,7 +74,7 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'core.wsgi.application'
-
+WSGI_APPLICATION = 'api.wsgi.app'
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
