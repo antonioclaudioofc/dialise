@@ -1,0 +1,95 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    color: rgb(5 46 22);
+}
+body{
+    
+    /*background: rgb(16,162,64);
+    background: linear-gradient(90deg, rgba(16,162,64,1) 0%, rgba(67,218,117,1) 35%, rgba(242,253,255,1) 100%); */
+
+.container{
+display:flex;
+background-color: #88CAC9;
+height: 100vh;
+justify-content: center;
+align-items: center;
+
+}
+
+.imagem{
+    background-color: rgb(240 253 244);
+    height: 70%;
+    width: 30%;
+    background-image:url(../img/login.svg);
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    border-radius: 5px 0 ;
+}
+
+section{
+    background-color: rgb(240 253 244);
+    height: 70vh;
+    width: 30%;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+}
+
+}
+form h1{
+    margin-top: 50px;
+    text-align: center;
+    color: #064e3b;
+    font-size: 48px;
+}
+.dados{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+}
+
+.input-field{
+    gap: 40px;
+    border-bottom: 1px solid #064e3b;
+}
+
+.campo{
+    border: None;
+    background-color: transparent;
+    width: 400px;
+    font-size: 18px;
+    padding: 10px 5px;
+}
+
+.campo:focus{
+    outline: none;
+}
+
+.btn{
+    border: none;
+    width: 300px;
+    align-self: center;
+    padding: 10px 22px;
+    margin-top: 40px;
+    background-color: #064e3b;
+    color: aliceblue;
+    font-size: 15px;
+    font-weight: bold;
+    border-radius: 5px;
+    box-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);    
+}
+
+.btn:hover{
+    transform: scale(1.2);
+    background-color: #2b9c7e;
+}

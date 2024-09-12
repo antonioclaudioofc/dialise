@@ -27,8 +27,7 @@ SECRET_KEY = 'django-insecure-&1janzp^w9%^lx8y+189$a&^en1j%t&-s8shh-z8s35k2=k_ml
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-# api/settings.py
-ALLOWED_HOSTS = ['127.0.0.1', '.vercel.app', ".onrender.com"]
+ALLOWED_HOSTS = ['127.0.0.1', ".onrender.com"]
 
 
 # Application definition
@@ -43,11 +42,11 @@ INSTALLED_APPS = [
     'dashboard',
     'accounts',
     'main',
+    'comunidade',
 ]
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
-    'whitenoise.middleware.WhiteNoiseMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
@@ -61,7 +60,7 @@ ROOT_URLCONF = 'core.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'static')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -75,17 +74,26 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'core.wsgi.application'
-WSGI_APPLICATION = 'api.wsgi.app'
+
 
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'Dialisando',
+        'HOST': '127.0.0.1',
+        'PORT': '3306',
+        'USER': 'rafael',
+        'PASSWORD': 'Felicidade123@',
     }
 }
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+SECURE_SSL_REDIRECT = True
+SESSION_COOKIE_SECURE = True
+CSRF_COOKIE_SECURE = True
 
 
 # Password validation
@@ -123,12 +131,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.1/howto/static-files/
 
 STATIC_URL = 'static/'
-
-if not DEBUG:
-    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
-    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
-
-STATICFILES_DIRS = [os.path.join(BASE_DIR)]
+STATICFILES_DIRS = ( os.path.join(BASE_DIR, 'templates/static'),)
 
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 MEDIA_URL = 'media/'
@@ -145,3 +148,8 @@ MESSAGE_TAGS = {
     constants.SUCCESS: 'alert-success',
     constants.INFO: 'alert-info',
 }
+
+try:
+    from .local_settings import *
+except:
+    pass

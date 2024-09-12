@@ -1,0 +1,231 @@
+/* GERAL*/
+* {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+
+h1,
+h2,
+h3 {
+    color: #333;
+}
+
+p {
+    color: #70747a;
+
+}
+
+.navbar-container{
+    width: 100%;
+    height: 80px;
+    background-color: #064e3b;
+    padding: 0.2rem;
+}
+
+.logo{
+    position: inline;
+    width: 50px;
+    margin-top: 15px;
+}
+
+.navbar-itens{
+    position:absolute;
+    right: 25px;
+    height: 80px;
+    line-height: 80px;
+
+}
+
+.navbar-itens li{
+    display: inline-block;
+    text-transform: uppercase;
+    margin-left: 25px;
+}
+
+.navbar-itens a{
+    color: #fff;
+    text-decoration: none;
+    transition: 0.5s;
+}
+
+.navbar-itens a:hover {
+    color: #ccc;
+}
+
+.default-btn{
+    padding: 15px 20px;
+    background-color: #2cc76a;
+    border-radius: 5px;
+}
+
+.default-btn:hover{
+    background-color: #22bb5f;
+}
+
+/* MAIN BANNER*/
+.main-banner{
+    background-image: url("../img/banner.jpg");
+    background-size: cover;
+    background-position: center;
+    padding: 10rem 0;
+}
+
+.main-banner h1,
+.main-banner p {
+    color: #fff;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25); 
+}
+
+.main-banner h1{
+    font-size: 54px;
+}
+.main-banner p{
+    font-size: 32px;
+}
+/* BENEFICIOS*/
+.services-container{
+    padding: 5rem 0;
+}
+
+.services-container ul{
+    display: flex; /*deixa um do lado do outro*/
+    width: 90%;
+    margin: 0 auto;
+}
+
+.services-container li{
+    flex: 1 1 200px;
+    list-style: none;
+    text-align: center;
+    padding: 20px;
+
+}
+
+.fas{
+    font-size: 60px;
+    margin-bottom: 15px;
+}
+
+.fa-shield-alt{
+    color: #2cc76a;
+}
+
+.fa-rocket{
+    color: #ef3f29;
+}
+
+.fa-comment{
+    color: #ef8f24;
+}
+
+.services-container h3{
+    margin-bottom: 25px;
+}
+
+.services-container p{
+    line-height: 24px;
+}
+
+/* NEWS LETTER*/
+.news-letter{
+    background-color: #064e3b;
+    text-align: center;
+    padding: 5rem 0;
+}
+
+.news-letter h2{
+    color: #fff;
+    font-size: 42px;
+    margin-bottom: 15px;
+}
+
+.news-letter p{
+    color: #d5d5d5;
+    font-size: 24px;
+    margin-bottom: 25px;
+}
+
+.news-letter input{
+    display: block;
+    border: none;
+    border-radius: 5px;
+    margin: 0 auto;
+}
+
+.news-letter input[type="text"]{
+    width: 60%;
+    padding: 20px;
+    font-size: 20px;
+    margin-bottom: 25px;
+}
+
+.news-letter input[type="submit"]{
+    background-color: #2cc76a;
+    padding: 15px 30px;
+    color: #fff;
+    font-size: 24px;
+    cursor: pointer;
+    opacity: .9;
+}
+
+.news-letter input[type="submit"]:hover{
+
+    opacity: 1;
+}
+/* CONTATO */
+
+.contact{
+    text-align: center;
+    padding: 5rem 0 2rem 0;
+
+}
+
+.contact h2{
+    font-size: 36px;
+
+}
+
+.contact p{
+    font-size: 20px;
+    margin-bottom: 40px;
+}
+
+.contact input,
+.contact textarea{
+    width: 200px;
+    padding: 10px 20px;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    margin: 0 10px 20px
+}
+.contact textarea{
+    display: block;
+    margin: 0 auto 20px;
+    width: 470px;
+    height: 150px;
+}
+
+.contact input[type="submit"]{
+    display: block;
+    margin: 0 auto;
+    background-color: #2cc76a;
+    color: #fff;
+    cursor: pointer;
+}
+
+/*FOOTER*/
+footer{
+    text-align: center;
+    font-weight: bold;
+    margin: 30px 0 100px;
+}
+
+footer p{
+    color: #232a31;
+    font-size: 14px;
+}

@@ -1,0 +1,22 @@
+<!-- forum/templates/forum/new_post.html -->
+{% extends "_base.html" %}
+{% block title %}Novo Post{% endblock %}
+
+{% block content %}
+    <div class="container">
+    <h2>Crie um novo post</h2>
+    </div>
+    <div class="container">
+    <form method="POST">
+        {% csrf_token %}
+        <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Título</label>
+            <input type="text" class="form-control" name="title" placeholder="Título da sua dúvida">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Conteúdo</label>
+            <textarea name="content" class="form-control" placeholder="Conteúdo"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary">Criar Post</button>
+    </form>
+{% endblock %}

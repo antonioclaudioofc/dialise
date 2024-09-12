@@ -1,0 +1,91 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    <!--ICONES-->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- ESTILO-->
+    
+    <link rel="stylesheet" href="{% static "css/index.css" %}" class="css">
+</head>
+<body>
+    <div class="container">
+        <div class="navbar-container">
+            <nav>
+                <!--<a href=""><img src="img/logo.jpg" alt="Dialise" class="logo"></a>-->
+                <ul class="navbar-itens">
+                    <li><a href="{% url "painel" %}">Painel</a></li>
+                    <li><a href="#">Testes</a></li>
+                    <li><a href="{% url "post_list" %}">Comunidade</a></li>
+                    {% if not user.is_authenticated %}
+                        <li><a href="{% url "login" %}" class="default-btn">Entrar</a></li>
+                    {% else %}
+                    <li><a href="" class="default-btn">{{user}}</a></li>
+                    {% endif %}
+                </ul>
+                    
+            </nav>
+            
+        </div>
+    </div>
+    <main>
+        <div class="main-banner">
+            <h1>Diálise</h1>
+            <p>Fisioterapia referência em nefrologia</p>
+        </div>
+
+        <section class="services-container">
+            <ul>
+                <li>
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>Segurança</h3>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure expedita quod distinctio sequi inventore explicabo aut impedit, eveniet aperiam earum odit nostrum soluta amet non culpa, ab, nesciunt rem numquam!
+                    </p>
+                </li>
+                <li>
+                    <i class="fas fa-rocket"></i>
+                    <h3>Eficiência</h3>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure expedita quod distinctio sequi inventore explicabo aut impedit, eveniet aperiam earum odit nostrum soluta amet non culpa, ab, nesciunt rem numquam!
+                    </p>
+                </li>
+                <li>
+                    <i class="fas fa-comments"></i>
+                    <h3>Suporte Eficaz</h3>
+                    <p>
+                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure expedita quod distinctio sequi inventore explicabo aut impedit, eveniet aperiam earum odit nostrum soluta amet non culpa, ab, nesciunt rem numquam!
+                    </p>
+                </li>
+            </ul>
+
+        </section>
+        <section class="news-letter">
+            <h2>Receba novidades da nossa plataforma</h2>
+            <p>Participe da nossa Newsletter</p>
+            <form action="">
+                <input type="text" name="cct" id="cct" placeholder="Informe seu email">
+                <input type="submit" value="Enviar Email">
+            </form>
+        </section>
+        <section class="contact">
+            <h2>Mande uma mensagem</h2>
+            <p>Mande sua mensagem, um especialista entrará em contato</p>
+            <form action="">
+                <input type="text" placeholder="Seu nome">
+                <input type="email" name="email" id="email" placeholder="Digite seu e-mail">
+                <textarea name="messages" id="messages" placeholder="Descreva o que você precisa ou a sua dúvida"></textarea>
+                <input type="submit" value="Enviar">
+            </form>
+        </section>
+    </main>
+    <footer class="footer">
+        <p>Diálise Fisiolab 2024</p>
+    </footer>
+
+</body>
+</html>
